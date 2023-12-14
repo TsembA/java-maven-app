@@ -17,9 +17,10 @@ pipeline {
                 script{
                     echo "building the docker image..."
                     withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-                        sh 'docker build -t 24.144.88.233:8083/java-maven-app:3.1 .'
-                        sh 'echo $PASS | docker login -u $USER --password-stdin 24.144.88.233:8083'
-                        sh 'docker push 24.144.88.233:8083/java-maven-app:3.1'
+                        sh 'docker build -t tsemb/demo-app:jma-2.0 .'
+                        sh 'echo $PASS | docker login -u $USER --password-stdin'
+                        sh 'docker push tsemb/demo-app:jma-2.0'
+                    }
                     }
                 }
             }
