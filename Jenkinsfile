@@ -1,7 +1,6 @@
 pipeline {
-
     agent any
-    parameters{
+    parameters {
         choice(name: 'VESRION', choices: ['1.1.0','1.2.0','1.3.0'], description:'')
         booleanParam(name: 'executeTests', defaultValue: true, description:'')
     }
@@ -22,19 +21,14 @@ pipeline {
                 }
             }
             steps {
-                echo 'testing the application...'
-
-                
+                echo 'testing the application...'                
             }
         }
         stage("deploy") {
 
             steps {
                 echo 'deploy the application...'
-                echo "deploying version ${params.VERSION}"
-
-
-                
+                echo "deploying version ${params.VERSION}"                
             }
         }
     }
