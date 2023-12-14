@@ -1,10 +1,11 @@
 pipeline {
 
     agent any
-    choice(name: 'VESRION', choices: ['1.1.0','1.2.0','1.3.0'], description:'')
-    booleanParam(name: 'executeTests', defaultValue: true, description:'')
-
-
+    parametrs{
+        choice(name: 'VESRION', choices: ['1.1.0','1.2.0','1.3.0'], description:'')
+        booleanParam(name: 'executeTests', defaultValue: true, description:'')
+    }
+    
     stages {
 
         stage("build") {
