@@ -28,7 +28,7 @@ pipeline {
                 withCredentials([
                     usernamePassword(credentials: 'server-credential', usernameVariabble: USER, passwordVariable: PWD)
                 ]) {
-                    sh 'echo pwd'
+                    echo 'Delpoy successful'
                 }
 
                 
