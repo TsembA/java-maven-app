@@ -21,7 +21,6 @@ pipeline {
                         sh 'echo $PASS | docker login -u $USER --password-stdin'
                         sh 'docker push tsemb/demo-app:jma-2.0'
                     }
-                    }
                 }
             }
         }
