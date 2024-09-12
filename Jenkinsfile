@@ -26,10 +26,10 @@ pipeline {
         stage("build image") {
             steps {
                 script {
-                    buildImage()
-                    }
+                    buildImage 'tsemb/demo-app:jma-7.0'
                 }
             }
+        }
         stage("deploy app") {
             steps {
                 script {
