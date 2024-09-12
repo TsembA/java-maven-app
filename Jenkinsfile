@@ -27,9 +27,9 @@ pipeline {
             steps {
                 script {
                     buildImage()
-                    }
                 }
             }
+        }
         stage("deploy app") {
             steps {
                 script {
